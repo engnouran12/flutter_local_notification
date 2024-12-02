@@ -3,23 +3,13 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'notification.dart';
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
-void main() async {
+
+void main()  {
   WidgetsFlutterBinding.ensureInitialized();
-  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-        FlutterLocalNotificationsPlugin();
-flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<
-    AndroidFlutterLocalNotificationsPlugin>()!.requestNotificationsPermission();
+  
 
-  const AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('@mipmap/ic_launcher');
-       // Use your app icon
+  
 
-  const InitializationSettings initializationSettings =
-      InitializationSettings(android: initializationSettingsAndroid);
-
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
   runApp(const MyApp());
 }
 
